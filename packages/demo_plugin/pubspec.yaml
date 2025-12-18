@@ -1,0 +1,27 @@
+name: demo_plugin
+description: Demo
+version: 0.1.0+1
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.11.0-242.0.dev
+  flutter: '>=3.40.0-1.0.pre-162'
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        default_package: demo_plugin_android
+
+dependencies:
+  flutter:
+    sdk: flutter
+  demo_plugin_android:
+    path: ../demo_plugin_android
+  demo_plugin_platform_interface:
+    path: ../demo_plugin_platform_interface
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter

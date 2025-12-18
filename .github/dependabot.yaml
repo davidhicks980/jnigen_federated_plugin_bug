@@ -1,0 +1,23 @@
+version: 2
+enable-beta-ecosystems: true
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "pub"
+    directory: "/demo_plugin"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "pub"
+    directory: "/demo_plugin/example"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "pub"
+    directory: "/demo_plugin_platform_interface"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "pub"
+    directory: "/demo_plugin_android"
+    schedule:
+      interval: "daily"

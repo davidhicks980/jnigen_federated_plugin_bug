@@ -1,0 +1,20 @@
+output:
+  dart:
+    path: lib/demo_android_bindings.dart
+    structure: single_file
+
+android_sdk_config:
+  # This attempts to resolve Android SDK and Gradle dependencies automatically
+  add_gradle_deps: true 
+  add_gradle_sources: true
+  android_example: example/ # Path to an example app to resolve classpath
+
+source_path:
+  - 'android/src/main/kotlin'
+
+classes:
+  - 'com.demo.demo.DemoPlugin'
+
+
+preamble: |
+  // ignore_for_file: type=lint

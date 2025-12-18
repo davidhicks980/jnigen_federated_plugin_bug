@@ -1,0 +1,31 @@
+name: demo_plugin_android
+description: Android implementation of the demo_plugin plugin
+version: 0.1.0+1
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.11.0-242.0.dev
+  flutter: '>=3.40.0-1.0.pre-162'
+
+flutter:
+  plugin:
+    implements: demo_plugin
+    platforms:
+      android:
+        dartPluginClass: DemoPluginAndroid
+        ffiPlugin: true
+
+dependencies:
+  flutter:
+    sdk: flutter
+  demo_plugin_platform_interface:
+    path: ../demo_plugin_platform_interface
+  jni: ^0.15.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  plugin_platform_interface: ^2.1.8
+  jnigen: ^0.15.0
+

@@ -1,0 +1,25 @@
+name: demo_plugin_android
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/demo_plugin_android.yaml"
+      - "demo_plugin_android/**"
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/demo_plugin_android.yaml"
+      - "demo_plugin_android/**"
+
+jobs:
+  build:
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
+    with:
+      flutter_version: 3.35.0
+      working_directory: demo_plugin_android
+

@@ -1,0 +1,11 @@
+name: demo_plugin_workspace
+workspace:
+  - packages/demo_plugin
+  - packages/demo_plugin/example
+  - packages/demo_plugin_android
+  - packages/demo_plugin_android/example
+  - packages/demo_plugin_platform_interface
+
+environment:
+  sdk: ^3.11.0-242.0.dev
+  flutter: '>=3.40.0-1.0.pre-162'
