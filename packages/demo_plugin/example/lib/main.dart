@@ -2,7 +2,6 @@ import 'package:demo_plugin/demo_plugin.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  manuallyRegisterAndroid();
   runApp(const MyApp());
 }
 
