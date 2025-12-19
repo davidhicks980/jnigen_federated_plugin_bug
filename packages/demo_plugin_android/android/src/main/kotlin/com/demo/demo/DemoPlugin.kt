@@ -4,5 +4,7 @@ import androidx.annotation.Keep
 
 @Keep
 class DemoPlugin {
-  fun callback() {}
+  fun callback(): String {
+    return "Partner"
+  }
 }

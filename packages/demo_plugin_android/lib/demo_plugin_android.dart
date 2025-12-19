@@ -13,7 +13,9 @@ class DemoPluginAndroid extends DemoPluginPlatform {
     DemoPluginPlatform.instance = DemoPluginAndroid();
   }
 
-  void callback() {
-    binding.callback();
+  @override
+  String callback() {
+    final result = binding.callback().toDartString(releaseOriginal: true);
+    return "Howdy $result";
   }
 }

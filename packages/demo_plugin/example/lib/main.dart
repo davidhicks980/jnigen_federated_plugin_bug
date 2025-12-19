@@ -20,11 +20,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  @override
-  void initState() {
-    super.initState();
-    demoPluginCallback();
-  }
+  String _greeting = "";
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +29,17 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [const Text('DemoPlugin is running.')],
+          children: [
+            TextButton(
+              onPressed: () {
+                setState(() {
+                  _greeting = getPlatformGreeting();
+                });
+              },
+              child: Text('Howdy'),
+            ),
+            Text(_greeting),
+          ],
         ),
       ),
     );

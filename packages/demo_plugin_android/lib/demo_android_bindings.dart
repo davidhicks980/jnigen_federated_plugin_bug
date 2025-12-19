@@ -82,27 +82,34 @@ class DemoPlugin extends jni$_.JObject {
     );
   }
 
-  static final _id_callback = _class.instanceMethodId(r'callback', r'()V');
+  static final _id_callback = _class.instanceMethodId(
+    r'callback',
+    r'()Ljava/lang/String;',
+  );
 
   static final _callback =
       jni$_.ProtectedJniExtensions.lookup<
             jni$_.NativeFunction<
-              jni$_.JThrowablePtr Function(
+              jni$_.JniResult Function(
                 jni$_.Pointer<jni$_.Void>,
                 jni$_.JMethodIDPtr,
               )
             >
-          >('globalEnv_CallVoidMethod')
+          >('globalEnv_CallObjectMethod')
           .asFunction<
-            jni$_.JThrowablePtr Function(
+            jni$_.JniResult Function(
               jni$_.Pointer<jni$_.Void>,
               jni$_.JMethodIDPtr,
             )
           >();
 
-  /// from: `public fun callback(): kotlin.Unit`
-  void callback() {
-    _callback(reference.pointer, _id_callback as jni$_.JMethodIDPtr).check();
+  /// from: `public fun callback(): kotlin.String`
+  /// The returned object must be released after use, by calling the [release] method.
+  jni$_.JString callback() {
+    return _callback(
+      reference.pointer,
+      _id_callback as jni$_.JMethodIDPtr,
+    ).object<jni$_.JString>(const jni$_.$JString$Type$());
   }
 }
 
