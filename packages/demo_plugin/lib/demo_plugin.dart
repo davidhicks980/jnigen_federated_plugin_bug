@@ -1,3 +1,4 @@
+import 'package:demo_plugin_android/demo_plugin_android.dart';
 import 'package:demo_plugin_platform_interface/demo_plugin_platform_interface.dart';
 
 DemoPluginPlatform get _platform => DemoPluginPlatform.instance;
@@ -5,4 +6,8 @@ DemoPluginPlatform get _platform => DemoPluginPlatform.instance;
 /// Returns a friendly greeting.
 String getPlatformGreeting() {
   return _platform.callback();
+}
+
+void manuallyRegisterAndroid() {
+  DemoPluginPlatform.instance = DemoPluginAndroid();
 }

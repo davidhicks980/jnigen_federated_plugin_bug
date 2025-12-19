@@ -13,7 +13,7 @@ flutter:
     implements: demo_plugin
     platforms:
       android:
-        dartPluginClass: DemoPluginAndroid
+        # dartPluginClass: DemoPluginAndroid
         ffiPlugin: true
 
 dependencies:
