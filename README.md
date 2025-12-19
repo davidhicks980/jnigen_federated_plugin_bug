@@ -3,7 +3,7 @@ Running `packages/demo_plugin/example` throws immediately.
 Deleting the `dartPluginClass` line from
 `packages/demo_plugin_android/pubspec.yaml` should allow the example to run
 normally, but the plugin will print "Hello Friend" (the default platform
-interface behavior) instead of "Howdy Partner".
+interface behavior) upon pressing the "Howdy" button.
 
 You may need to run `flutter clean` from the example directory after making this
 change.
